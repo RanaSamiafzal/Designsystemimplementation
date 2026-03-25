@@ -17,7 +17,6 @@ import {
   Edit,
   Trash2
 } from 'lucide-react';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { Card } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
@@ -228,12 +227,7 @@ export function DeliverableBoardPage() {
   const stats = getTotalStats();
 
   return (
-    <DashboardLayout
-      userRole={userRole}
-      userName={userName}
-      notificationCount={isInfluencer ? 5 : 3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="min-h-screen bg-[#f9fafb]">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
@@ -407,6 +401,6 @@ export function DeliverableBoardPage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

@@ -29,7 +29,6 @@ import {
   Link as LinkIcon,
   Paperclip
 } from 'lucide-react';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { Card } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
@@ -171,12 +170,7 @@ export function CollaborationDetailsPage() {
   };
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="min-h-screen bg-[#f9fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
@@ -801,6 +795,6 @@ export function CollaborationDetailsPage() {
           )}
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, CardHeader, ProfileCard } from '../components/Cards';
 import { InfluButton } from '../components/InfluButton';
 import { Users, FileText, CheckCircle, Clock } from 'lucide-react';
@@ -71,13 +70,7 @@ export function BrandDashboard() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      userEmail="contact@bravotech.com"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-4 sm:space-y-6">
         {/* Welcome Section */}
         <div>
@@ -164,6 +157,6 @@ export function BrandDashboard() {
           </div>
         </Card>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

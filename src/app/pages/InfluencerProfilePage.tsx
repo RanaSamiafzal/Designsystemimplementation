@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card } from '../components/Cards';
 import { InfluButton } from '../components/InfluButton';
 import { StatusBadge } from '../components/StatusBadge';
@@ -81,12 +80,7 @@ export function InfluencerProfilePage() {
   const PlatformIcon = platformIcons[influencer.platform] || Users;
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         {/* Profile Header */}
         <div className="relative">
@@ -316,6 +310,6 @@ export function InfluencerProfilePage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

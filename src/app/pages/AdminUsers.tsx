@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card } from '../components/Cards';
 import { Input, Select } from '../components/FormComponents';
 import { InfluButton } from '../components/InfluButton';
@@ -119,12 +118,7 @@ export function AdminUsers() {
   };
 
   return (
-    <DashboardLayout
-      userRole="admin"
-      userName="Admin"
-      notificationCount={5}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-4 sm:space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
           <div>
@@ -288,6 +282,6 @@ export function AdminUsers() {
           </div>
         </Card>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

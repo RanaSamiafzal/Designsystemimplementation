@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { Card, CardHeader } from '../../components/Cards';
 import { Input, Select, Textarea } from '../../components/FormComponents';
 import { InfluButton } from '../../components/InfluButton';
@@ -96,12 +95,7 @@ export function BrandProfileSettings() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName={profileData.name}
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-bold text-[#111827] mb-2">Brand Profile Settings</h2>
@@ -386,6 +380,6 @@ export function BrandProfileSettings() {
           </div>
         )}
       </div>
-    </DashboardLayout>
+    </>
   );
 }

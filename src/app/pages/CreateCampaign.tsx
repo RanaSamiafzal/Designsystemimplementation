@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, CardHeader } from '../components/Cards';
 import { Input, Textarea, Select } from '../components/FormComponents';
 import { InfluButton } from '../components/InfluButton';
@@ -59,12 +58,7 @@ export function CreateCampaign() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
@@ -254,6 +248,6 @@ export function CreateCampaign() {
           </InfluButton>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

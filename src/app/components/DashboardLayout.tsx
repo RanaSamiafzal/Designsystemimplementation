@@ -122,9 +122,9 @@ export function DashboardLayout({
         {/* Sidebar */}
         <aside
           className={cn(
-            "fixed lg:static inset-y-0 left-0 z-30 w-64 bg-white border-r border-[#e5e7eb] transform transition-transform lg:translate-x-0",
+            "fixed lg:sticky inset-y-0 left-0 z-30 w-64 bg-white border-r border-[#e5e7eb] transform transition-transform lg:translate-x-0 overflow-y-auto",
             isSidebarOpen ? "translate-x-0" : "-translate-x-full",
-            "top-[57px] sm:top-[73px] lg:top-0"
+            "top-[57px] sm:top-[73px] lg:h-[calc(100vh-73px)]"
           )}
         >
           <nav className="p-3 sm:p-4 space-y-1 sm:space-y-2">

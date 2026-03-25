@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, CardHeader, InfluencerCard } from '../components/Cards';
 import { InfluButton } from '../components/InfluButton';
 import { StatusBadge } from '../components/StatusBadge';
@@ -83,13 +82,7 @@ export function InfluencerDashboard() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="influencer"
-      userName="Sarah Johnson"
-      userEmail="sarah@example.com"
-      notificationCount={8}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         {/* Welcome Section */}
         <div>
@@ -253,6 +246,6 @@ export function InfluencerDashboard() {
           </div>
         </Card>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

@@ -12,7 +12,6 @@ import {
   Upload,
   User
 } from 'lucide-react';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { InfluButton } from '../../components/InfluButton';
 import { Card } from '../../components/Cards';
 import { StatusBadge } from '../../components/StatusBadge';
@@ -116,12 +115,8 @@ export function CollaborationHubPage() {
   };
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <> navigate('/login')
+    
       <div className="min-h-screen bg-gradient-to-br from-[#eff6ff] via-white to-[#f0f9ff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Back Button */}
@@ -299,6 +294,6 @@ export function CollaborationHubPage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

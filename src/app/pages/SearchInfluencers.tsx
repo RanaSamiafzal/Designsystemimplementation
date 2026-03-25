@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, ProfileCard } from '../components/Cards';
 import { Select } from '../components/FormComponents';
 import { Search } from 'lucide-react';
@@ -65,13 +64,7 @@ export function SearchInfluencers() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      userEmail="contact@bravotech.com"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-4 sm:space-y-6">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-[#111827] mb-1 sm:mb-2">Find the Perfect Influencers for Your Brand</h2>
@@ -143,6 +136,6 @@ export function SearchInfluencers() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

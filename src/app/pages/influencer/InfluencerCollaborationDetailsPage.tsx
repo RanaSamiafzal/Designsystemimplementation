@@ -15,7 +15,6 @@ import {
   FileText,
   MoreVertical
 } from 'lucide-react';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { Card } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
@@ -136,12 +135,7 @@ export function InfluencerCollaborationDetailsPage() {
   };
 
   return (
-    <DashboardLayout
-      userRole="influencer"
-      userName="Sarah Chen"
-      notificationCount={5}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="min-h-screen bg-[#f9fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
@@ -457,6 +451,6 @@ export function InfluencerCollaborationDetailsPage() {
           </div>
         )}
       </div>
-    </DashboardLayout>
+    </>
   );
 }

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 import { Button } from '../../components/ui/button';
 import { Card } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
-import { DashboardLayout } from '../../components/DashboardLayout';
 
 interface Brand {
   id: string;
@@ -80,12 +79,7 @@ export function SearchBrandsPage() {
   );
 
   return (
-    <DashboardLayout
-      userRole="influencer"
-      userName="Sarah Johnson"
-      notificationCount={8}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div>
@@ -156,6 +150,6 @@ export function SearchBrandsPage() {
           ))}
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

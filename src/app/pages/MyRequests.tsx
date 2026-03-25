@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, RequestCard } from '../components/Cards';
 import { BadgeStatus } from '../components/StatusBadge';
 
@@ -56,13 +55,7 @@ export function MyRequests() {
   ];
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      userEmail="contact@bravotech.com"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-bold text-[#111827] mb-2">My Requests</h2>
@@ -113,6 +106,6 @@ export function MyRequests() {
           )}
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 import { Button } from '../../components/ui/button';
 import { Card } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
-import { DashboardLayout } from '../../components/DashboardLayout';
 
 interface CollaborationRequest {
   id: string;
@@ -68,12 +67,7 @@ export function InfluencerRequestsPage() {
   };
 
   return (
-    <DashboardLayout
-      userRole="influencer"
-      userName="Sarah Johnson"
-      notificationCount={8}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-6">
         {/* Header */}
         <div>
@@ -137,6 +131,6 @@ export function InfluencerRequestsPage() {
           ))}
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

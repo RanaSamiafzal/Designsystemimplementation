@@ -9,7 +9,6 @@ import {
   Clock,
   Target
 } from 'lucide-react';
-import { DashboardLayout } from '../../components/DashboardLayout';
 import { Card } from '../../components/Cards';
 import { InfluButton } from '../../components/InfluButton';
 
@@ -57,12 +56,8 @@ export function CampaignHubPage() {
   const completedCampaigns = mockCampaigns.filter(c => c.status === 'completed').length;
 
   return (
-    <DashboardLayout
-      userRole="brand"
-      userName="BravoTech"
-      notificationCount={3}
-      onLogout={() => navigate('/login')}
-    >
+    <> 
+    
       <div className="min-h-screen bg-gradient-to-br from-[#eff6ff] via-white to-[#f0f9ff] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -293,6 +288,6 @@ export function CampaignHubPage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 }

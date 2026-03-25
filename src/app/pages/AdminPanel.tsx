@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DashboardLayout } from '../components/DashboardLayout';
 import { Card, CardHeader } from '../components/Cards';
 import { InfluButton } from '../components/InfluButton';
 import { StatusBadge } from '../components/StatusBadge';
@@ -49,12 +48,7 @@ export function AdminPanel() {
   };
 
   return (
-    <DashboardLayout
-      userRole="admin"
-      userName="Admin"
-      notificationCount={5}
-      onLogout={() => navigate('/login')}
-    >
+    <>
       <div className="space-y-4 sm:space-y-6">
         {/* Header with gradient background */}
         <div className="bg-gradient-to-br from-[#3b82f6] to-[#8b5cf6] rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white">
@@ -222,6 +216,6 @@ export function AdminPanel() {
           </Card>
         )}
       </div>
-    </DashboardLayout>
+    </>
   );
 }
