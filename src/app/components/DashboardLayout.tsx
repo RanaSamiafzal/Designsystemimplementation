@@ -167,9 +167,10 @@ export function DashboardLayout({
       )}
 
       {/* Notification Panel */}
-      <NotificationPanel 
-        isOpen={isNotificationOpen} 
-        onClose={() => setIsNotificationOpen(false)} 
+      <NotificationPanel
+        isOpen={isNotificationOpen}
+        onClose={() => setIsNotificationOpen(false)}
+        userRole={userRole}
       />
     </div>
   );

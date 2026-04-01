@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { Bell, X, CheckCircle, AlertCircle, Info, TrendingUp } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -15,6 +16,7 @@ interface Notification {
 interface NotificationPanelProps {
   isOpen: boolean;
   onClose: () => void;
+  userRole?: 'brand' | 'influencer' | 'admin';
 }
 
 const mockNotifications: Notification[] = [
@@ -52,7 +54,8 @@ const mockNotifications: Notification[] = [
   }
 ];
 
-export function NotificationPanel({ isOpen, onClose }: NotificationPanelProps) {
+export function NotificationPanel({ isOpen, onClose, userRole = 'influencer' }: NotificationPanelProps) {
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState(mockNotifications);
 
   const unreadCount = notifications.filter(n => !n.read).length;
@@ -63,6 +66,17 @@ export function NotificationPanel({ isOpen, onClose }: NotificationPanelProps) {
 
   const markAllAsRead = () => {
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));
+  };
+
+  const handleViewAll = () => {
+    onClose();
+    if (userRole === 'influencer') {
+      navigate('/influencer/notifications');
+    } else if (userRole === 'brand') {
+      navigate('/brand/notifications');
+    } else {
+      navigate('/admin/notifications');
+    }
   };
 
   const getIcon = (type: string) => {
@@ -157,7 +171,12 @@ export function NotificationPanel({ isOpen, onClose }: NotificationPanelProps) {
 
             {/* Footer */}
             <div className="p-2 sm:p-3 border-t border-[#e5e7eb]">
-              <Button variant="outline" size="sm" className="w-full text-xs sm:text-sm">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full text-xs sm:text-sm"
+                onClick={handleViewAll}
+              >
                 View All Notifications
               </Button>
             </div>

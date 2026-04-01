@@ -53,6 +53,7 @@ import { InfluencerRequestsPage } from './pages/influencer/InfluencerRequestsPag
 import { InfluencerAnalyticsPage } from './pages/influencer/InfluencerAnalyticsPage';
 import { InfluencerProfileSettings } from './pages/influencer/InfluencerProfileSettings';
 import { InfluencerCollaborationDetailsPage } from './pages/influencer/InfluencerCollaborationDetailsPage';
+import { NotificationsPage } from './pages/influencer/NotificationsPage';
 
 // Admin pages
 import { AdminVerificationsPage } from './pages/admin/AdminVerificationsPage';
@@ -273,6 +274,10 @@ export const router = createBrowserRouter([
   {
     path: '/influencer/profile-settings',
     Component: InfluencerProfileSettings,
+  },
+  {
+    path: '/influencer/notifications',
+    Component: NotificationsPage,
   },
   {
     path: '*',
